@@ -18,47 +18,43 @@ int main() {
     ptr = new double [SIZE]; //new array
     
     enterArrayData(ptr);
-    cout << "Data entry complete." << endl;
-    cout << "Outputting array elements: ";
-    //outputArrayData(ptr);
-    //sumArray(ptr);
+    outputArrayData(ptr);
+    sumArray(ptr);
     
     delete [] ptr; //delete array
     
     return 0;
 }
 
-//receives dynamic double array 
-//populates it with user values
 double* enterArrayData(double [SIZE]) {
+    cout << "Data entry for the array: " << endl;
     //temporary array
     double *arr = nullptr;
     arr = new double[SIZE];
     int count = -1; //accumulator
-    //populate array
+    //populate array with user values
     for (int i = 0; i < SIZE; i++) {
         count++;
         cout << "> Element #" << count << ": ";
         cin >> arr[i];
     }
+    cout << "Data entry complete." << endl;
     return arr;
 }
 
-//receives dynamic double array
-//outputs contents on one line
 double* outputArrayData(double [SIZE]) {
     //temporary array
     double *arr = nullptr;
     arr = new double[SIZE];
-    //output array
     cout << "Outputting array elements: ";
+    //output array
     for (int i = 0; i < SIZE; i++) {
         cout << arr[i] << " ";
     }
+    cout << endl;
     return arr;
 }
 
-//receives dynamic double array
 void sumArray(double [SIZE]) {
     //temporary array
     double *arr = nullptr;
