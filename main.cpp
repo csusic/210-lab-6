@@ -4,9 +4,9 @@
 using namespace std;
 
 //function prototypes
-double* enterArrayData(double []);
-double* outputArrayData(double []);
-void sumArray(double []);
+double* enterArrayData(double[]);
+double* outputArrayData(double[]);
+void sumArray(double[]);
 
 //size of array
 const int SIZE = 5;
@@ -14,11 +14,14 @@ const int SIZE = 5;
 int main() {
     //create pointer that points to new array
     double *ptr = nullptr;
-    //array of doubles
-    ptr = new double [SIZE]; //new array
+    //new array of doubles
+    ptr = new double[SIZE];
     
+    //populate array with user values
     enterArrayData(ptr);
+    //output array
     outputArrayData(ptr);
+    //calculates and returns sum
     sumArray(ptr);
     
     delete [] ptr; //delete array
@@ -26,11 +29,8 @@ int main() {
     return 0;
 }
 
-double* enterArrayData(double [SIZE]) {
+double* enterArrayData(double arr[SIZE]) {
     cout << "Data entry for the array: " << endl;
-    //temporary array
-    double *arr = nullptr;
-    arr = new double[SIZE];
     int count = -1; //accumulator
     //populate array with user values
     for (int i = 0; i < SIZE; i++) {
@@ -42,10 +42,7 @@ double* enterArrayData(double [SIZE]) {
     return arr;
 }
 
-double* outputArrayData(double [SIZE]) {
-    //temporary array
-    double *arr = nullptr;
-    arr = new double[SIZE];
+double* outputArrayData(double arr[SIZE]) {
     cout << "Outputting array elements: ";
     //output array
     for (int i = 0; i < SIZE; i++) {
@@ -55,10 +52,7 @@ double* outputArrayData(double [SIZE]) {
     return arr;
 }
 
-void sumArray(double [SIZE]) {
-    //temporary array
-    double *arr = nullptr;
-    arr = new double[SIZE];
+void sumArray(double arr[SIZE]) {
     //calculates and returns sum
     double sum = 0;
     for (int i = 0; i < SIZE; i++) {
