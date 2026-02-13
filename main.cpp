@@ -17,29 +17,33 @@ int main() {
     //array of doubles
     ptr = new double [SIZE]; //new array
     
-    enterArrayData();
-    outputArrayData();
-    sumArray();
-    cout << "Sum of values: " << sum; 
+    //ptr = enterArrayData(double [SIZE]);
+    //ptr = outputArrayData(double [SIZE]);
+    //ptr = sumArray(double [SIZE]);
+    
+    delete [] ptr;
     
     return 0;
 }
 
 //receives dynamic double array 
 //populates it with user values
-double enterArrayData(double []) {
-    //populate array
+double enterArrayData(double [SIZE]) {
+    //temporary array
+    double *arr = nullptr;
+    arr = new double[SIZE];
     int count = 0; //accumulator
+    //populate array
     for (int i = 0; i < SIZE; i++) {
         count++;
         cout << "Element #" << count << ": " << ptr[i] << endl;
     }
-    return;
+    return arr;
 }
 
 //receives dynamic double array
 //outputs contents on one line
-double outputArrayData(double []) {
+double outputArrayData(double [SIZE]) {
     //output array
     cout << "Outputting array elements: ";
     for (int i = 0; i < SIZE; i++)
@@ -50,10 +54,10 @@ double outputArrayData(double []) {
 
 //receives dynamic double array
 //calculates and returns sum
-void sumArray(double []) {
+void sumArray(double [SIZE]) {
     double sum = 0;
     for (int i = 0; i < SIZE; i++) {
         sum += ptr[i];
     }
-    return sum;
+    cout << "Sum of values: " << sum;
 }
