@@ -20,6 +20,7 @@ int main() {
     enterArrayData();
     outputArrayData();
     sumArray();
+    cout << "Sum of values: " << sum; 
     
     return 0;
 }
@@ -28,8 +29,11 @@ int main() {
 //populates it with user values
 double enterArrayData(double []) {
     //populate array
-    for (int i = 0; i < SIZE; i++)
-        ptr[i];
+    int count = 0; //accumulator
+    for (int i = 0; i < SIZE; i++) {
+        count++;
+        cout << "Element #" << count << ": " << ptr[i] << endl;
+    }
     return;
 }
 
@@ -37,13 +41,19 @@ double enterArrayData(double []) {
 //outputs contents on one line
 double outputArrayData(double []) {
     //output array
+    cout << "Outputting array elements: ";
     for (int i = 0; i < SIZE; i++)
         cout << ptr[i] << " ";
+        
     return;
 }
 
 //receives dynamic double array
 //calculates and returns sum
 void sumArray(double []) {
-    
+    double sum = 0;
+    for (int i = 0; i < SIZE; i++) {
+        sum += ptr[i];
+    }
+    return sum;
 }
