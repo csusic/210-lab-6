@@ -4,8 +4,8 @@
 using namespace std;
 
 //function prototypes
-double enterArrayData(double []);
-double outputArrayData(double []);
+double* enterArrayData(double []);
+double* outputArrayData(double []);
 void sumArray(double []);
 
 //size of array
@@ -17,33 +17,36 @@ int main() {
     //array of doubles
     ptr = new double [SIZE]; //new array
     
-    //ptr = enterArrayData(double [SIZE]);
-    //ptr = outputArrayData(double [SIZE]);
-    //ptr = sumArray(double [SIZE]);
+    enterArrayData(ptr);
+    cout << "Data entry complete." << endl;
+    cout << "Outputting array elements: ";
+    //outputArrayData(ptr);
+    //sumArray(ptr);
     
-    delete [] ptr;
+    delete [] ptr; //delete array
     
     return 0;
 }
 
 //receives dynamic double array 
 //populates it with user values
-double enterArrayData(double [SIZE]) {
+double* enterArrayData(double [SIZE]) {
     //temporary array
     double *arr = nullptr;
     arr = new double[SIZE];
-    int count = 0; //accumulator
+    int count = -1; //accumulator
     //populate array
     for (int i = 0; i < SIZE; i++) {
         count++;
-        cout << "Element #" << count << ": " << arr[i] << endl;
+        cout << "> Element #" << count << ": ";
+        cin >> arr[i];
     }
     return arr;
 }
 
 //receives dynamic double array
 //outputs contents on one line
-double outputArrayData(double [SIZE]) {
+double* outputArrayData(double [SIZE]) {
     //temporary array
     double *arr = nullptr;
     arr = new double[SIZE];
@@ -51,8 +54,8 @@ double outputArrayData(double [SIZE]) {
     cout << "Outputting array elements: ";
     for (int i = 0; i < SIZE; i++) {
         cout << arr[i] << " ";
-        return arr;
     }
+    return arr;
 }
 
 //receives dynamic double array
